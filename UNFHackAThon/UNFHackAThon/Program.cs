@@ -13,16 +13,20 @@ namespace UNFHackAThon
 {
     public class Program
     {
+        // Where the application of this program kicks off
         public static void Main(string[] args)
         {
+            //Builds the webhost. Calling the run method. Listen to the upcoming http request
             CreateWebHostBuilder(args).Build().Run();
 
 
         }
 
+        // Returns an object that bulilds Web Host builder method
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+              // Extention method
+            .UseStartup<Startup>();
 
 
     }
